@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- luffy.kelompokbuku_ tree view -->
+    <record id="luffy_kelompokbuku_view_tree" model="ir.ui.view">
+        <field name="name">luffy.kelompokbuku.view.tree</field>
+        <field name="model">luffy.kelompokbuku</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="kode_kelompok"/>
+                <field name="kode_rak"/>
+                <field name="jml_item"/>
+                <field name="daftar"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- luffy.kelompokbuku_form view -->
+    <record id="luffy_kelompokbuku__view_form" model="ir.ui.view">
+        <field name="name">luffy.kelompokbuku.view.form</field>
+        <field name="model">luffy.kelompokbuku</field>
+        <field name="arch" type="xml">
+            <form string="Kelompok Buku">
+                <sheet>
+                    <group name="Kelompok" string="Letak Kelompok">
+                        <field name="name"/>
+                        <field name="kode_kelompok"/>
+                        <field name="jml_item"/>
+                    </group>
+                    <group name="Rak" string="Letak Buku">
+                        <field name="kode_rak"/> 
+                        <field name="buku_ids"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- luffy.kelompokbuku action window -->
+    <record id="luffy_kelompokbuku_action" model="ir.actions.act_window">
+        <field name="name">Kelompok Buku</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">luffy.kelompokbuku</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="luffy_kelompokbuku_menu_act" 
+              name="Kelompok Buku" 
+              parent="luffy_buku_menu_categ" 
+              action="luffy_kelompokbuku_action" 
+              sequence="10"/>
+
+</odoo>

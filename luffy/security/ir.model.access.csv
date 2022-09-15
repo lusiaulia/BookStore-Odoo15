@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_luffy_kelompokbuku,access.luffy.kelompokbuku,model_luffy_kelompokbuku,,1,1,1,1
+access_luffy_buku,access.luffy.buku,model_luffy_buku,,1,1,1,1
+access_luffy_person,access.luffy.person,model_luffy_person,,1,1,1,1
+access_luffy_admintokoonline,access.luffy.admintokoonline,model_luffy_admintokoonline,,1,1,1,1
+access_luffy_kasir,access.luffy.kasir,model_luffy_kasir,,1,1,1,1
+access_luffy_cleaningservice,access.luffy.cleaningservice,model_luffy_cleaningservice,,1,1,1,1
+access_luffy_penerbit,access.luffy.penerbit,model_luffy_penerbit,,1,1,1,1
+access_luffy_penjualan,access.luffy.penjualan,model_luffy_penjualan,,1,1,1,1
+access_luffy_detailpenjualan,access.luffy.detailpenjualan,model_luffy_detailpenjualan,,1,1,1,1

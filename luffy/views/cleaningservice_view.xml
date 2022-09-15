@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- luffy.cleaningservice inherit tree view -->
+    <record id="luffy_cleaning_service_view_tree_inherit" model="ir.ui.view">
+        <field name="name">Daftar Cleaning Service</field>
+        <field name="model">luffy.cleaningservice</field>
+        <field name="mode">primary</field>
+        <field name="inherit_id" ref="luffy_person_view_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name= 'name']" position="before">
+                <field name="id_cleaningservice"/>
+            </xpath>    
+        </field> 
+    </record>
+
+    <!-- luffy.cleaningservice inherit form view -->
+    <record id="luffy_cleaning_service_view_form_inherit" model="ir.ui.view">
+        <field name="name">Form Cleaning Service</field>
+        <field name="model">luffy.cleaningservice</field>
+        <field name="mode">primary</field>
+        <field name="inherit_id" ref="luffy_person_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form//sheet//group[2]" position="after">
+                <group name="id" string="ID">
+                    <field name="id_cleaningservice" />
+                </group>
+            </xpath>
+            <xpath expr="//field[@name='alamat']" position="attributes">
+                <attribute name="string">Address</attribute>                
+            </xpath>
+        </field>
+    </record>
+
+    <!-- luffy.cleaningservice action window -->
+    <record id="luffy_cleaning_service_action" model="ir.actions.act_window">
+        <field name="name">Cleaning Service</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">luffy.cleaningservice</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="luffy_cleaning_service_menu_act" 
+              name="Cleaning Service" 
+              parent="luffy_karyawan_menu_categ" 
+              action="luffy_cleaning_service_action" 
+              sequence="20"/>
+
+</odoo>

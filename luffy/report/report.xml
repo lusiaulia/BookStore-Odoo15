@@ -1,0 +1,14 @@
+<odoo>
+
+    <!-- Report Penerbit -->
+    <record id="report_penerbit_xlsx" model="ir.actions.report">
+        <field name="name">Penerbit Excel</field>
+        <field name="model">luffy.penerbit</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">luffy.report_penerbit_xlsx</field>
+        <field name="report_file">luffy.report_penerbit_xlsx</field>
+        <field name="binding_model_id" ref="model_luffy_penerbit"/>
+        <field name="binding_type">report</field>
+    </record>
+
+</odoo>
