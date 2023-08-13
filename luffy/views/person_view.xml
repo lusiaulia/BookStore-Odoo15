@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <!-- luffy.person tree view -->
+    <record id="luffy_person_view_tree" model="ir.ui.view">
+        <field name="name">luffy.person.view.tree</field>
+        <field name="model">luffy.person</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="panggilan"/>
+                <field name="alamat"/>
+                <field name="tgl_lahir"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- luffy.person form view -->
+    <record id="luffy_person_view_form" model="ir.ui.view">
+        <field name="name">luffy.person.view.form</field>
+        <field name="model">luffy.person</field>
+        <field name="arch" type="xml">
+            <form string="Nama">
+                <sheet>
+                    <group name="nama" string="Nama">
+                        <field name="name"/>
+                        <field name="panggilan"/>
+                        </group>
+                    <group name="data" string="Data">
+                        <field name="alamat"/>
+                        <field name="tgl_lahir"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

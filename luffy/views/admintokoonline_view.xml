@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- luffy.admintokoonline inherit tree view -->
+    <record id="luffy_admin_toko_online_view_tree_inherit" model="ir.ui.view">
+        <field name="name">Daftar Admin Toko Online</field>
+        <field name="model">luffy.admintokoonline</field>
+        <field name="mode">primary</field>
+        <field name="inherit_id" ref="luffy_person_view_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name= 'name']" position="before">
+                <field name="id_admintokoonline"/>
+            </xpath>    
+        </field> 
+    </record>
+
+    <!-- luffy.admintokoonline inherit form view -->
+    <record id="luffy_admin_toko_online_view_form_inherit" model="ir.ui.view">
+        <field name="name">Form Admin Toko Online</field>
+        <field name="model">luffy.admintokoonline</field>
+        <field name="mode">primary</field>
+        <field name="inherit_id" ref="luffy_person_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form//sheet//group[2]" position="after">
+                <group name="id" string="ID">
+                    <field name="id_admintokoonline" />
+                </group>
+            </xpath>
+            <xpath expr="//field[@name='alamat']" position="attributes">
+                <attribute name="string">Address</attribute>                
+            </xpath>
+        </field>
+    </record>
+
+    <!-- luffy.admintokoonline action window -->
+    <record id="luffy_admin_toko_online_action" model="ir.actions.act_window">
+        <field name="name">Admin Toko Online</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">luffy.admintokoonline</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="luffy_admin_toko_online_menu_act" 
+              name="Admin Toko Online" 
+              parent="luffy_karyawan_menu_categ" 
+              action="luffy_admin_toko_online_action" 
+              sequence="30"/>
+
+</odoo>

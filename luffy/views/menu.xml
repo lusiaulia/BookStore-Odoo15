@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- This Menu Item will appear in the Upper bar, that's why It needs NO parent or action -->
+    <menuitem id="luffy_menu_root" 
+              name="Mirai Book Store"
+              sequence="10"/>
+
+    <!-- This Menu Item Must have a parent -->
+    <menuitem id="luffy_buku_menu_categ" 
+              name="Buku" 
+              parent="luffy_menu_root" 
+              sequence="10"/>
+
+    <!-- This Menu Item Must have a parent -->
+    <menuitem id="luffy_karyawan_menu_categ" 
+              name="Karyawan" 
+              parent="luffy_menu_root" 
+              sequence="20"/>
+
+    <!-- This Menu Item Must have a parent -->
+    <menuitem id="luffy_transaksi_menu_categ" 
+              name="Transaksi" 
+              parent="luffy_menu_root" 
+              sequence="42"/>
+
+</odoo>

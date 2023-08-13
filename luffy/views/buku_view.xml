@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- luffy.buku tree view -->
+    <record id="luffy_buku_view_tree" model="ir.ui.view">
+        <field name="name">Daftar Buku</field>
+        <field name="model">luffy.buku</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="harga_beli"/>
+                <field name="harga_jual"/>
+                <field name="persediaan" />
+                <field name="kelompokbuku_id"/>
+                <field name="penerbit_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- luffy.buku form view -->
+    <record id="luffy_buku_view_form" model="ir.ui.view">
+        <field name="name">Form Buku</field>
+        <field name="model">luffy.buku</field>
+        <field name="arch" type="xml">
+            <form string="Buku">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="harga_beli"/>
+                        <field name="harga_jual"/>
+                        <field name="persediaan" />
+                    </group>
+                    <group name="kelompokbuku" string="Kelompok Buku">
+                        <field name="kelompokbuku_id"/>
+                    </group>
+                    <group name="penerbit" string="Penerbit">
+                        <field name="penerbit_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- luffy.buku action window -->
+    <record id="luffy_buku_action" model="ir.actions.act_window">
+        <field name="name">Daftar Buku</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">luffy.buku</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="luffy_buku_menu_act" 
+              name="Daftar Buku" 
+              parent="luffy_buku_menu_categ" 
+              action="luffy_buku_action" 
+              sequence="20"/>
+
+</odoo>
